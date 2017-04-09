@@ -37,7 +37,8 @@ function subscribe(req,res)
 
 
 function notifyUser(req,res) {
-	var cmd = "curl --header \"Authorization: key=AAAAnQ-2xSs:APA91bGDrosr5MNraL5D_0SSwtXN2F1zJEkC9715xzfXJLvjCehjREI9QEr6U-cTnftD3a-tRlKtd__X1goC78100BL4Qw1NcPTWAWlWXDb-J7rg8BNxyv3mOYSDZztYjPKrkhEw_B0n\" --header Content-Type:\"application/json\" https://android.googleapis.com/gcm/send -d \"{\\\"registration_ids\\\":[\\\"ftuNXT4XNUM:APA91bEbgQEbJU05LbzoIXIje5YO4VPateQ7kPJW6VT4YwmhAugcepQk5A5dqlYmzwa7Vkzd1oJKmXZ_CmUWu8X3oru0XhjfPgdPGqYXj9HNdmXjYnd_AFHByRu_ZMbpdmWiTjpWjFi1\\\"]}\"";
+	var cmd = "curl --header \"Authorization: key=AAAAnQ-2xSs:APA91bGDrosr5MNraL5D_0SSwtXN2F1zJEkC9715xzfXJLvjCehjREI9QEr6U-cTnftD3a-tRlKtd__X1goC78100BL4Qw1NcPTWAWlWXDb-J7rg8BNxyv3mOYSDZztYjPKrkhEw_B0n\" --header Content-Type:\"application/json\" https://android.googleapis.com/gcm/send -d \"{\\\"registration_ids\\\":[\\\"f9YASXaP0Lk:APA91bG-Spb4QORduNVo5-eCpJh1KikbR5nOl7pXn8PeIMMPH-GklXZxBptUa9EQzxaIQPoMmhO27csw-XW4Gn2b7PoA48Vn8Zc8n9wwO_GjXJ208OzNDeI7_ftQXoqfKFMMuUoHgsYg\\\"]}\"";
+	
 	var result = runCmd(cmd);
 }
 
