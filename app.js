@@ -38,7 +38,7 @@ app.post('/subscribe', service.subscribe);
 app.get('/thankyou', user.thankyou);
 app.get('/notify', user.notify);
 app.get('/notifyUser', service.notifyUser);
-
+app.get('/getUsers', service.getUsers);
 
 mongo.connect(mongoURL, function(){
 	console.log('Connected to mongo at: ' + mongoURL);
