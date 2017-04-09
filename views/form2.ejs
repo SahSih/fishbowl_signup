@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Push Notifications</title>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Core CSS -->
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+      <link rel="stylesheet" href='/stylesheets/font-awesome.css'>
+    <!-- Custom CSS -->
+	<script	src="/js/angular.min.js"></script>
+	<script
+	src="/angularJS/user.js"></script>
+    <!-- Fonts -->
+</head>
+<body ng-app="user" ng-controller="user">
+
+
+<!-- This panel is for login -->
+<div class="container" >
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<a href="#" class="active" id="login-form-link">Subscribe</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" name='loginForm' style="display: block;" ng-click="loginForm.$valid && checkUser();" >
+									<div class="form-group">
+										<input type="text"  name="fname" id="fname" class="form-control email" placeholder="First Name"  ng-model="fname"  >
+									</div>
+									
+									<div class="form-group">
+										<input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" ng-model="lname" required  >
+									</div>
+									<div class="form-group">
+										<input type="text" name="email" id="email" class="form-control" placeholder="Email" ng-model="email" required  >
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="exampleSelect1" ng-model = "gender">
+								          <option selected="selected">Male</option>
+								          <option>Female</option>
+								        </select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="exampleSelect2"
+											ng-model="cuisine">
+											<option >Grass</option>
+											<option>Meat</option>
+											<option selected>Vegan</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="form-check-label"> <input
+											type="checkbox" class="form-check-input" ng-model="accept"> I accept to
+											receive notifications
+										</label>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" 
+														name="checkUser" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Subscribe">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

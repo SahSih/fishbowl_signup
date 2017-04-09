@@ -35,6 +35,9 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/signup', user.signup);
 app.post('/subscribe', service.subscribe);
+app.get('/thankyou', user.thankyou);
+app.get('/notify', user.notify);
+app.post('/notifyUser', service.notifyUser);
 
 
 mongo.connect(mongoURL, function(){

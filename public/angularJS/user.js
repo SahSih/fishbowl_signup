@@ -6,7 +6,12 @@ user.controllers
 user.controller('user', function($scope, $http) {
 	
 	$scope.checkUser = function() {
-		if(true){
+		var fname = $scope.fname;
+		var lname = $scope.lname;
+		var email = $scope.email;
+		var gender = $scope.gender;
+		var cuisine = $scope.cuisine;
+		if(fname != undefined && lname != undefined && email != undefined && gender != undefined && cuisine != undefined  && $scope.accept != undefined ){
 		$http({
 			method : "POST",
 			url : '/subscribe',

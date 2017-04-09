@@ -12,3 +12,28 @@ exports.signup = function(req, res) {
 		}
 	});
 }
+exports.thankyou = function(req, res) {
+	ejs.renderFile('./views/thankyou.ejs', function (err, result) {
+		if (!err) {
+			res.end(result);
+		}
+		else {
+			tool.logError(err);
+			res.end('An error occurred');
+			console.log(err);
+		}
+	});
+}
+
+exports.notify = function(req, res) {
+	ejs.renderFile('./views/notify.ejs', function (err, result) {
+		if (!err) {
+			res.end(result);
+		}
+		else {
+			tool.logError(err);
+			res.end('An error occurred');
+			console.log(err);
+		}
+	});
+}
