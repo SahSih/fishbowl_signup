@@ -25,12 +25,17 @@
 <body ng-app="app2" ng-controller="login as vm">
 <div class="container">
 
-  <table ng-table="vm.tableParams" class="table table-striped" show-filter="true">
-    <tr ng-repeat="user in $data">
-      <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-        {{user.name}}</td>
-      <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
-        {{user.age}}</td>
+  <table class="table table-striped" >
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Gender</td>
+      <td>Age</td>
+
+    <tr ng-repeat="x in data">
+      <td>{{ x.firstName }}</td>
+      <td>{{ x.lastName }}</td>
+      <td>{{ x.gender }}</td>
+      <td>{{ x.age }}</td>
     </tr>
   </table>
 
@@ -61,29 +66,7 @@
      });
   });
 
-  var app2 = angular.module("app2", ["ngTable"]);
-  app2.controller('login', ['$scope', '$http','NgTableParams', '$defer',  function($scope, $http, NgTableParams, $defer) {
 
-    var data = [{name: "Moroni", age: 50} , {name: "Moroni", age: 50} , {name: "Moroni", age: 50} , {name: "Moroni", age: 50}
-      , {name: "Noro", age: 50}, {name: "Noro", age: 50}, {name: "Zoro", age: 50}, {name: "Horo", age: 50}, {name: "IIII", age: 50}
-      , {name: "IJJJro", age: 50}, {name: "XXXX", age: 51}, {name: "yyy", age: 30}];
-   // this.tableParams = new NgTableParams({}, { dataset: data});
-
-    this.tableParams = new NgTableParams({
-      page: 1,            // show first page
-      count: 2
-    }, {
-      total: data.length, // length of data
-      getData: function(params) {
-        // use build-in angular filter
-
-
-        $defer.resolve(data.slice((params.page() - 1) * params.count(),     params.page() *    params.count()));
-        params.total(data.length);
-      }
-    });
-
-  }]);
 </script>
 </body>
 </html>

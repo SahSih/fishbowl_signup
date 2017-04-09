@@ -1,10 +1,33 @@
+var app2 = angular.module("app2", ["ngTable"]);
+app2.controller('login', ['$scope', '$http','NgTableParams',  function($scope, $http, NgTableParams) {
+	$scope.data = [];
 
+	var data = [{name: "Moroni", age: 50} , {name: "Moroni", age: 50} , {name: "Moroni", age: 50} , {name: "Moroni", age: 50}
+		, {name: "Noro", age: 50}, {name: "Noro", age: 50}, {name: "Zoro", age: 50}, {name: "Horo", age: 50}, {name: "IIII", age: 50}
+		, {name: "IJJJro", age: 50}, {name: "XXXX", age: 51}, {name: "yyy", age: 30}];
+	// this.tableParams = new NgTableParams({}, { dataset: data});
+
+	$http({
+		method : "GET",
+		url : '/getUsers'
+	}).success(function(data) {
+		$scope.data = data.data;
+
+	}).error(function(error) {
+
+	});
+
+}]);
 
 
 
 var user = angular.module('user', ["ngTable"]);
 //defining the login controller
 user.controllers
+
+
+
+
 
 user.controller('user', ['$scope', '$http','NgTableParams', function($scope, $http, NgTableParams) {
 
@@ -32,7 +55,7 @@ user.controller('user', ['$scope', '$http','NgTableParams', function($scope, $ht
 		this.tableParams = new NgTableParams({}, { dataset: data});
 	};
 
-	$scope.init();
+
 	$scope.checkUser = function(abc) {
 		var fname = $scope.fname;
 		var lname = $scope.lname;
