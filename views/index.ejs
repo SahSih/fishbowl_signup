@@ -43,8 +43,22 @@ limitations under the License.
 
 </head>
 
+<style>
+  header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+  }
+</style>
+
 <body>
 <div class="container">
+  <header>
+    <h1>FishBowl - JambaJuice</h1>
+  </header>
+
   <h1> Sign up to get exclusive offers</h1>
 
   <form id = "signupForm" name = "signupForm" method="POST">
@@ -103,23 +117,23 @@ limitations under the License.
     $("#signupForm").submit(function(e) {
       var curl = document.getElementById("curl").innerHTML;
       var url = "/subscribe"; // the script where you handle the form input.
-        $.ajax({
-          type: "POST",
-          url: url,
-          data:  {firstName: $("#firstName").val(),
-            lastName: $("#lastName").val(),
-            email: $("#email").val(),
-            gender: $("#gender").val(),
-            age :$("#age").val(),
-            cuisine: $("#cuisine").val(),
-            curl:curl
-          },
-          success: function(data)
-          {
-            alert("Thank You");
-            window.location.replace("/thankyou");
-          }
-        });
+      $.ajax({
+        type: "POST",
+        url: url,
+        data:  {firstName: $("#firstName").val(),
+          lastName: $("#lastName").val(),
+          email: $("#email").val(),
+          gender: $("#gender").val(),
+          age :$("#age").val(),
+          cuisine: $("#cuisine").val(),
+          curl:curl
+        },
+        success: function(data)
+        {
+          alert("Thank You");
+          window.location.replace("/thankyou");
+        }
+      });
       e.preventDefault(); // avoid to execute the actual submit of the form.
     });
   });
