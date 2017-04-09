@@ -20,7 +20,7 @@
 <body>
 <div class="container">
   <form id = "signupForm" name = "signupForm" method="POST">
-    <input type="button" id = "notifyButton" class="btn btn-primary">Notify</input>
+    <button type="submit" class="btn btn-primary">Notify</button>
   </form>
 </div>
 
@@ -32,7 +32,6 @@
       var url = "/notifyUser"; // the script where you handle the form input.
 
 
-      $('#notifyButton').click(function() {
         $.ajax({
           type: "GET",
           url: url,
@@ -44,7 +43,6 @@
 
           }
         });
-      });
      });
   });
 </script>
