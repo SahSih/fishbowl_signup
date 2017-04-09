@@ -37,7 +37,7 @@ app.get('/signup', user.signup);
 app.post('/subscribe', service.subscribe);
 app.get('/thankyou', user.thankyou);
 app.get('/notify', user.notify);
-app.post('/notifyUser', service.notifyUser);
+app.get('/notifyUser', service.notifyUser);
 
 
 mongo.connect(mongoURL, function(){
