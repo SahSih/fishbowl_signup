@@ -25,12 +25,16 @@
 <body ng-app="app2" ng-controller="login as vm">
 <div class="container">
 
+  <header>
+    <h1>FishBowl Admin - JambaJuice</h1>
+  </header>
+
   <table class="table table-striped" >
-      <td>First Name</td>
-      <td>Last Name</td>
-      <td>Gender</td>
-      <td>Age</td>
-    <td>&nbsp;</td>
+    <td><b> First Name </b></td>
+    <td><b>Last Name </b></td>
+    <td><b>Gender </b></td>
+    <td><b>Age </b></td>
+    <td><b>Send Promotion </b></td>
 
     <tr ng-repeat="x in data">
       <td>{{ x.firstName }}</td>
@@ -67,5 +71,14 @@
 
 
 </script>
+<style>
+  header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+  }
+</style>
 </body>
 </html>
