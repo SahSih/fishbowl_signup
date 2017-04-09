@@ -30,17 +30,16 @@
       <td>Last Name</td>
       <td>Gender</td>
       <td>Age</td>
+    <td>&nbsp;</td>
 
     <tr ng-repeat="x in data">
       <td>{{ x.firstName }}</td>
       <td>{{ x.lastName }}</td>
       <td>{{ x.gender }}</td>
       <td>{{ x.age }}</td>
+      <td><input type="button" class="on btn btn-primary" id="Notify"  value="Notify" ng-click='checkUser(x.curl)'> </td>
     </tr>
   </table>
-
-
-  <input type="button" class="on btn btn-primary" id="Notify"  value="Notify" ng-click="checkUser('abc');">
 
 </div>
 
