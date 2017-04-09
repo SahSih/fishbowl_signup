@@ -208,17 +208,25 @@ function initialiseState() {
 
 window.addEventListener('load', function() {
   var pushButton = document.querySelector('.js-push-button');
+
+  navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+    // Do we already have a push message subscription?
+    serviceWorkerRegistration.pushManager.getSubscription()
+      .then(function(subscription) {
+        if(!subscription){
+          document.getElementById('pushcheck').checked = false;
+        } else{
+          document.getElementById('pushcheck').checked = true;
+        }
+      })
+  })
+
+
   pushButton.addEventListener('click', function() {
     if (isPushEnabled) {
       unsubscribe();
-      $(document).ready(function(){
-            $("#secret").show();
-      });
     } else {
       subscribe();
-      $(document).ready(function(){
-            $("#secret").hide();
-      });
     }
   });
 
